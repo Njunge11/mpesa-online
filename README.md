@@ -61,7 +61,7 @@ const params = {
   'BusinessShortCode': '',
   'CheckoutRequestID': '',
   'consumerKey': '',
-  'consumerSecret': '5gLwicObjcxXG5IE',
+  'consumerSecret': '',
   'passKey': '',
   'authenticationURL': '',
   'queryRequestURL': 'https://sandbox.safaricom.co.ke/mpesa/stkpushquery/v1/query'
