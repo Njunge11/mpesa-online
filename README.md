@@ -43,3 +43,10 @@ const params = {
 1. Login to the [devevolper's portal](https://developer.safaricom.co.ke/login-register)
 2. Click on your app.
 3. The 'Keys' tab contains the keys.
+
+##### The required sandbox/test URL's
+type   | url
+--- | ---
+authenticationURL   |   https://sandbox.safaricom.co.ke/oauth/v1/generate?grant_type=client_credentials
+processRequestURL   |   https://sandbox.safaricom.co.ke/mpesa/stkpush/v1/processrequest
+
