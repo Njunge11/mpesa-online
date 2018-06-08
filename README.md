@@ -6,3 +6,11 @@ This library provides a quick and painless means to integrate to the platform. I
 ## Installation
 ```
 $ npm install mpesa-online
+```
+### Initiate mpesa transaction
+```javascript
+const MpesaOnline = require('./lib/mpesa-online')
+new MpesaOnline(payload, 'queryRequest').processRequest()
+  .then(response => console.log(response))
+  .catch(error => console.log(error))
+```
