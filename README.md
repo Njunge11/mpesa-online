@@ -34,3 +34,5 @@ const params = {
   'processRequestURL': '' // MPESA request processing end point
 }
 ```
+#### You will also notice the processRequest method returns a promise, use it to obtain responses from MPESA.
+#### From the sample params provided above, you can retrieve the BusinessShortCode, PartyB and the passKey from []
