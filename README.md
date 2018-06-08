@@ -39,6 +39,7 @@ const params = {
 2. On the navbar, select 'DOCS'
 3. Click 'Test Credentials' on the side bar
 4. A link to the test credentials is provided in the instructions
+
 ##### To obtain the consumerKey and consumerSecret:
 1. Login to the [devevolper's portal](https://developer.safaricom.co.ke/login-register)
 2. Click on your app.
@@ -51,7 +52,9 @@ authenticationURL   |   https://sandbox.safaricom.co.ke/oauth/v1/generate?grant_
 processRequestURL   |   https://sandbox.safaricom.co.ke/mpesa/stkpush/v1/processrequest
 
 ##### After passing the correct params and running your code, you should receive a payment prompt on your mobile device:
+<p align = "center"
 <img src = https://raw.githubusercontent.com/Njunge11/mpesa-online/master/IMG_8703.PNG  alt="STK push" width="250"/>
+</p>
 
 ## Check payment status(queryRequest)
 ##### The params
