@@ -34,5 +34,9 @@ const params = {
   'processRequestURL': '' // MPESA request processing end point
 }
 ```
-#### You will also notice the processRequest method returns a promise, use it to obtain responses from MPESA.
-#### From the sample params provided above, you can retrieve the BusinessShortCode, PartyB and the passKey from []
+#### You can retrieve the BusinessShortCode(Lipa Na Mpesa Online Shortcode), PartyB and passKey(Lipa Na Mpesa Online Passkey) values by :
+* Login into the [dev portal](https://developer.safaricom.co.ke/)
+* On the navbar, select DOCS
+* Click 'Test Credentials' on the side bar
+* In the explanation, a link to the test credentials is provided
+
