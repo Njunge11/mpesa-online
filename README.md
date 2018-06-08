@@ -75,4 +75,6 @@ new MpesaOnline(params, 'queryRequest').processRequest()
   .then(response => console.log(response))
   .catch(error => console.log(error))
 ```
+## License
+##### MIT
 
