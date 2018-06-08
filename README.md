@@ -51,9 +51,9 @@ authenticationURL   |   https://sandbox.safaricom.co.ke/oauth/v1/generate?grant_
 processRequestURL   |   https://sandbox.safaricom.co.ke/mpesa/stkpush/v1/processrequest
 
 ##### After passing the correct params and running your code, you should receive a payment prompt on your mobile device:
-
+<div>
 <img src = https://raw.githubusercontent.com/Njunge11/mpesa-online/master/IMG_8703.PNG  alt="STK push" width="250"/>
- 
+ </div>
 ## Check payment status(queryRequest)
 ##### The params
 ```javascript
