@@ -1,0 +1,19 @@
+{
+  "name": "mpesa-online",
+  "version": "1.0.0",
+  "description": "Rapidly integrate mpesa to your web app",
+  "main": "index.js",
+  "scripts": {
+    "test": "standard && node test.js"
+  },
+  "author": "Njunge Njenga",
+  "license": "MIT",
+  "devDependencies": {
+    "standard": "^11.0.1"
+  },
+  "dependencies": {
+    "request-promise": "^4.2.2",
+    "request-promise-native": "^1.0.5",
+    "safe-buffer": "^5.1.2"
+  }
+}
