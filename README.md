@@ -7,7 +7,7 @@ This library provides a quick and painless means to integrate to MPESA. It will 
 ```
 $ npm install mpesa-online
 ```
-### Initiate mpesa transaction
+## Initiate mpesa transaction (processRequest)
 ```javascript
 const MpesaOnline = require('./lib/mpesa-online')
 const params = {}
@@ -15,7 +15,7 @@ new MpesaOnline(params, 'processRequest').processRequest()
   .then(response => console.log(response))
   .catch(error => console.log(error))
 ```
-##### In the snippet above, a params object is required to be passed. Below is a sample of what's required:
+##### In the snippet above, a params object is required to be passed:
 ```javascript
 const params = {
   'BusinessShortCode': '', // The organization shortcode used to receive the transaction.
@@ -54,3 +54,23 @@ processRequestURL   |   https://sandbox.safaricom.co.ke/mpesa/stkpush/v1/process
 <p align="center">
 <img src = https://raw.githubusercontent.com/Njunge11/mpesa-online/master/IMG_8703.PNG  alt="STK push" width="250"/>
   </p>
+## Check payment status(queryRequest)
+##### The params
+```javascript
+const params = {
+  'BusinessShortCode': '',
+  'CheckoutRequestID': '',
+  'consumerKey': '',
+  'consumerSecret': '5gLwicObjcxXG5IE',
+  'passKey': '',
+  'authenticationURL': '',
+  'queryRequestURL': 'https://sandbox.safaricom.co.ke/mpesa/stkpushquery/v1/query'
+}
+```
+##### Call processRequest and set the request type to queryRequest
+```javascript
+new MpesaOnline(params, 'queryRequest').processRequest()
+  .then(response => console.log(response))
+  .catch(error => console.log(error))
+```
+
