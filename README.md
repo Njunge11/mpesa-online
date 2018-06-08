@@ -42,7 +42,7 @@ const params = {
 ##### To obtain the consumerKey and consumerSecret:
 1. Login to the [devevolper's portal](https://developer.safaricom.co.ke/login-register)
 2. Click on your app.
-3. The 'Keys' tab contains the keys.
+3. The 'Keys' tab contains both keys.
 
 ##### The required sandbox/test URL's
 type   | url
