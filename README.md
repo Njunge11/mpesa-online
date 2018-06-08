@@ -10,7 +10,27 @@ $ npm install mpesa-online
 ### Initiate mpesa transaction
 ```javascript
 const MpesaOnline = require('./lib/mpesa-online')
-new MpesaOnline(payload, 'queryRequest').processRequest()
+const params = {}
+new MpesaOnline(params, 'processRequest').processRequest()
   .then(response => console.log(response))
   .catch(error => console.log(error))
+```
+##### In the snippet above, a params object is required to be passed. Below is a sample of what's required:
+```javascript
+const params = {
+  'BusinessShortCode': '', // The organization shortcode used to receive the transaction.
+  'TransactionType': 'CustomerPayBillOnline', // The transaction type to be used for this request.
+  'Amount': '1', // Amount to be charged / paid
+  'PartyA': '', // The mobile number sending the funds.
+  'PartyB': '', // The organization shortcode receiving the funds
+  'PhoneNumber': '', // The mobile number sending the funds.
+  'CallBackURL': '', // The url to where responses from M-Pesa will be sent to.
+  'AccountReference': '', // Used with M-Pesa PayBills
+  'TransactionDesc': 'Testing mpesa online',
+  'consumerKey': '',
+  'consumerSecret': '',
+  'passKey': '', // Used to create a password for use when making a Lipa Na M-Pesa Online Payment API calls
+  'authenticationURL': '', // MPESA authentication end point
+  'processRequestURL': '' // MPESA request processing end point
+}
 ```
