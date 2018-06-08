@@ -50,3 +50,7 @@ type   | url
 authenticationURL   |   https://sandbox.safaricom.co.ke/oauth/v1/generate?grant_type=client_credentials
 processRequestURL   |   https://sandbox.safaricom.co.ke/mpesa/stkpush/v1/processrequest
 
+##### After passing the corerct params and running your code, you should receive a payment prompt on your mobile device:
+<p align="center">
+<img src = https://raw.githubusercontent.com/Njunge11/mpesa-online/master/IMG_8703.PNG  alt="STK push" width="250"/>
+  </p>
