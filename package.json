@@ -4,7 +4,7 @@
   "description": "Rapidly integrate mpesa to your web app",
   "main": "index.js",
   "scripts": {
-    "test": "standard && node test.js"
+    "test": "standard && node index.js"
   },
   "author": "Njunge Njenga",
   "license": "MIT",
@@ -16,5 +16,25 @@
     "request-promise": "^4.2.2",
     "safe-buffer": "^5.1.2",
     "user": "0.0.0"
-  }
+  },
+  "directories": {
+    "lib": "lib"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Njunge11/mpesa-online.git"
+  },
+  "keywords": [
+    "mobile",
+    "payments",
+    "mpesa",
+    "STK",
+    "push",
+    "USSD",
+    "node"
+  ],
+  "bugs": {
+    "url": "https://github.com/Njunge11/mpesa-online/issues"
+  },
+  "homepage": "https://github.com/Njunge11/mpesa-online#readme"
 }
