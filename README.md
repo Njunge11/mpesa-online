@@ -1,7 +1,8 @@
 # mpesa-online
-A javascript library for node.js that simplifies integrating your website/web app to mpesa using the Lipa na mpesa online payment API . The API documentation is quite adequate and contains sufficient code samples for several languages, you can check it out [here.](https://developer.safaricom.co.ke/docs#lipa-na-m-pesa-online-payment)
+A lightweight library for node.js that simplifies integrating your website/web app to mpesa using the Lipa na mpesa online payment API . The API documentation is quite adequate and contains sufficient code samples for several languages, you can check it out [here.](https://developer.safaricom.co.ke/docs#lipa-na-m-pesa-online-payment). If you don't have a developers' account , please register [here](https://developer.safaricom.co.ke/login-register) and [create an app.](https://developer.safaricom.co.ke/docs#creating-a-sandbox-app). This is step is very important in order to access test short codes and credentials required by the API.
 
-This library provides a quick and painless means to integrate to MPESA. It will be useful to developers that want to get up and running as fast as possible and also presents an opportunity to effortlessly test the payment experience for those who are unfamiliar with the process.
+This library provides a quick and painless means to integrate to MPESA. It will be useful to developers that want to get up and running as fast as possible and also presents an opportunity to effortlessly test the payment experience for those who are unfamiliar with the process. 
+
 
 ## Installation
 ```
@@ -30,8 +31,8 @@ const params = {
   'consumerKey': '',
   'consumerSecret': '',
   'passKey': '', // Used to create a password for use when making a Lipa Na M-Pesa Online Payment API calls
-  'authenticationURL': '', // MPESA authentication end point
-  'processRequestURL': '' // MPESA request processing end point
+  'authenticationURL': 'https://sandbox.safaricom.co.ke/oauth/v1/generate?grant_type=client_credentials', // MPESA authentication end point
+  'processRequestURL': 'https://sandbox.safaricom.co.ke/mpesa/stkpush/v1/processrequest' // MPESA request processing end point
 }
 ```
 ##### You can retrieve the BusinessShortCode(Lipa Na Mpesa Online Shortcode), PartyB and passKey(Lipa Na Mpesa Online Passkey) values by :
@@ -44,12 +45,6 @@ const params = {
 1. Login to the [devevolper's portal](https://developer.safaricom.co.ke/login-register)
 2. Click on your app.
 3. The 'Keys' tab contains both keys.
-
-##### The required sandbox/test URL's
-type   | url
---- | ---
-authenticationURL   |   https://sandbox.safaricom.co.ke/oauth/v1/generate?grant_type=client_credentials
-processRequestURL   |   https://sandbox.safaricom.co.ke/mpesa/stkpush/v1/processrequest
 
 ##### After passing the correct params and running your code, you should receive a payment prompt on your mobile device:
 <p align = "center">
