@@ -37,7 +37,7 @@ const params = {
   'processRequestURL': 'https://sandbox.safaricom.co.ke/mpesa/stkpush/v1/processrequest' // MPESA request processing end point
 }
 ```
-#### You can retrieve the BusinessShortCode(Lipa Na Mpesa Online Shortcode), PartyB and passKey(Lipa Na Mpesa Online Passkey) values [here.] (https://developer.safaricom.co.ke/docs#test-credentials). A link to the test credentials is provided in the instructions.
+#### You can retrieve the BusinessShortCode(Lipa Na Mpesa Online Shortcode), PartyB and passKey(Lipa Na Mpesa Online Passkey) values [here.](https://developer.safaricom.co.ke/docs#test-credentials) A link to the test credentials is provided in the instructions.
 
 #### To obtain the consumerKey and consumerSecret:
 1. Login to the [devevolper's portal](https://developer.safaricom.co.ke/login-register)
