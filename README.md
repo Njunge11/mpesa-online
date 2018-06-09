@@ -8,7 +8,7 @@ This library provides a quick and painless means to integrate to MPESA. It will 
 $ npm i mpesa-online
 ```
 ## Initiate mpesa transaction (processRequest)
-#### The constructor expects 2 arguments - a params object and the request type (in this case processRequest). 'processRequest' will initiate an mpesa transaction and a payment prompt (STK push) will be sent to your mobile device.
+#### The constructor expects 2 arguments - a params object and the request type (in this case processRequest). 'processRequest' will initiate an mpesa transaction and a USSD payment prompt (STK push) will be sent to your mobile device.
 
 ####
 ```javascript
