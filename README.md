@@ -12,7 +12,7 @@ $ npm i mpesa-online
 
 ####
 ```javascript
-const MpesaOnline = require('./lib/mpesa-online')
+const MpesaOnline = require('mpesa-online')
 
 new MpesaOnline(params, 'processRequest').mpesaRequest()
   .then(response => console.log(response))
