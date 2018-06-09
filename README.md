@@ -40,11 +40,11 @@ const params = {
 #### You can retrieve the BusinessShortCode (Lipa Na Mpesa Online Shortcode), PartyB and passKey (Lipa Na Mpesa Online Passkey) values [here.](https://developer.safaricom.co.ke/docs#test-credentials) A link to the test credentials is provided in the instructions.
 
 #### To obtain the consumerKey and consumerSecret:
-1. Login to the [developer's portal](https://developer.safaricom.co.ke/login-register)
+1. Login to the [developers' portal](https://developer.safaricom.co.ke/login-register)
 2. Click on your app.
 3. The 'Keys' tab contains both keys.
 
-#### When you run your code, you should receive a payment prompt on your mobile device:
+#### When you run your code, you should receive a USSD payment prompt(STK push) on your mobile device:
 <p align = "center">
 <img src = https://raw.githubusercontent.com/Njunge11/mpesa-online/master/IMG_8703.PNG  alt="STK push" width="250"/>
 </p>
