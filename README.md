@@ -1,8 +1,7 @@
 # mpesa-online
-A lightweight library for node.js that simplifies integrating your website/web app to mpesa using the Lipa na mpesa online payment API . The API documentation is quite adequate and contains sufficient code samples for several languages, you can check it out [here.](https://developer.safaricom.co.ke/docs#lipa-na-m-pesa-online-payment). If you don't have a developers' account , please register [here](https://developer.safaricom.co.ke/login-register) and [create an app.](https://developer.safaricom.co.ke/docs#creating-a-sandbox-app). This is step is very important in order to access test short codes and credentials required by the API.
+A lightweight library for node.js that simplifies integrating your website/web app to mpesa using the Lipa na mpesa online payment API . The API documentation is quite adequate and contains sufficient code samples for several languages, you can check it out [here.](https://developer.safaricom.co.ke/docs#lipa-na-m-pesa-online-payment) If you don't have a developers' account , please [register](https://developer.safaricom.co.ke/login-register) and [create an app.](https://developer.safaricom.co.ke/docs#creating-a-sandbox-app). This step is very important in order to access test short codes and credentials required by the API.
 
 This library provides a quick and painless means to integrate to MPESA. It will be useful to developers that want to get up and running as fast as possible and also presents an opportunity to effortlessly test the payment experience for those who are unfamiliar with the process. 
-
 
 ## Installation
 ```
