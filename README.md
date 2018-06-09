@@ -1,5 +1,5 @@
-# mpesa-online (WORK IN PROGRESS, SHOULD BE READY FOR USE ON 11th JUNE 2018)
-A lightweight library for node.js that simplifies integrating your website/web app to mpesa using the Lipa na mpesa online payment API . The API documentation is quite adequate and contains sufficient code samples for several languages, you can check it out [here.](https://developer.safaricom.co.ke/docs#lipa-na-m-pesa-online-payment) If you don't have a developers' account , please [register](https://developer.safaricom.co.ke/login-register) and [create an app.](https://developer.safaricom.co.ke/docs#creating-a-sandbox-app). This step is very important in order to access test short codes and credentials required by the API.
+# mpesa-online
+A lightweight library for node.js that simplifies integrating your website/web app to mpesa using the Lipa na mpesa online payment API . The API documentation is quite adequate and contains sufficient code samples for several languages, you can check it out [here.](https://developer.safaricom.co.ke/docs#lipa-na-m-pesa-online-payment) If you don't have a developers' account , please [register](https://developer.safaricom.co.ke/login-register) and [create an app.](https://developer.safaricom.co.ke/docs#creating-a-sandbox-app) This step is very important in order to access test short codes and credentials required by the API.
 
 This library provides a quick and painless means to integrate to MPESA. It will be useful to developers that want to get up and running as fast as possible and also presents an opportunity to effortlessly test the payment experience for those who are unfamiliar with the process. 
 
@@ -8,6 +8,8 @@ This library provides a quick and painless means to integrate to MPESA. It will 
 $ npm install mpesa-online
 ```
 ## Initiate mpesa transaction (processRequest)
+#### The constructor expects 2 arguements - a params object and the request type(in this case processRequest). 'processRequest' will initiate an mpesa transaction and a payment prompt(STK push) will be sent to your mobile device.
+
 ####
 ```javascript
 const MpesaOnline = require('./lib/mpesa-online')
@@ -16,7 +18,7 @@ new MpesaOnline(params, 'processRequest').mpesaRequest()
   .then(response => console.log(response))
   .catch(error => console.log(error))
 ```
-#### In the snippet above, a params object is required to be passed:
+#### A sample of the params object:
 ```javascript
 const params = {
   'BusinessShortCode': '', // The organization shortcode used to receive the transaction.
@@ -46,12 +48,13 @@ const params = {
 2. Click on your app.
 3. The 'Keys' tab contains both keys.
 
-#### After passing the correct params and running your code, you should receive a payment prompt on your mobile device:
+#### When you run your code, you should receive a payment prompt on your mobile device:
 <p align = "center">
 <img src = https://raw.githubusercontent.com/Njunge11/mpesa-online/master/IMG_8703.PNG  alt="STK push" width="250"/>
 </p>
 
 ## Check payment status(queryRequest)
+#### The queryRequest request type checks the status of the payment.
 #### The params
 ```javascript
 const params = {
@@ -64,7 +67,6 @@ const params = {
   'queryRequestURL': 'https://sandbox.safaricom.co.ke/mpesa/stkpushquery/v1/query'
 }
 ```
-#### Call processRequest and set the request type to queryRequest
 ```javascript
 new MpesaOnline(params, 'queryRequest').mpesaRequest()
   .then(response => console.log(response))
