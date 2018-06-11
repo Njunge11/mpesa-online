@@ -73,7 +73,7 @@ mpesa.mpesaRequest(params, 'queryRequest')
 #### A snippet demonstrating how to make an mpesa request and query for the payment status.
 ```javascript
 // Add the mpesa-online module
-const MpesaOnline = require('mpesa-online')
+const MpesaOnline = require('./lib/mpesa-online')
 const mpesa = new MpesaOnline()
 
 // The params required to make a processRequest
@@ -109,7 +109,9 @@ mpesa.mpesaRequest(processRequestParams, 'processRequest')
           'authenticationURL': 'https://sandbox.safaricom.co.ke/oauth/v1/generate?grant_type=client_credentials',
           'queryRequestURL': 'https://sandbox.safaricom.co.ke/mpesa/stkpushquery/v1/query'
         }
-        return mpesa.mpesaRequest(queryRequestParams, 'queryRequest').then(response => response).catch(error => error)
+        return mpesa.mpesaRequest(queryRequestParams, 'queryRequest')
+          .then(response => response)
+          .catch(error => error)
       }, 10000, 1000) // Let's query for the payment status every second for 10 seconds, to cater for any little delay in processing
         .then(response => console.log(response))
         .catch(error => console.log(error))
