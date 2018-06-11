@@ -73,7 +73,7 @@ mpesa.mpesaRequest(params, 'queryRequest')
 #### A snippet demonstrating how to make an mpesa payment request and query for the payment status.
 ```javascript
 // Add the mpesa-online module
-const MpesaOnline = require('./lib/mpesa-online')
+const MpesaOnline = require('mpesa-online')
 const mpesa = new MpesaOnline()
 
 // The params required to make a processRequest
