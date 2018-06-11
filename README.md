@@ -78,20 +78,20 @@ const mpesa = new MpesaOnline()
 
 // The params required to make a processRequest
 const processRequestParams = {
-  'BusinessShortCode': '', // The organization shortcode used to receive the transaction
-  'TransactionType': 'CustomerPayBillOnline', // The transaction type to be used for this request
-  'Amount': '1', // Amount to be charged / paid
-  'PartyA': '', // The mobile number sending the funds
-  'PartyB': '', // The organization shortcode receiving the funds
-  'PhoneNumber': '', // The mobile number sending the funds
-  'CallBackURL': '', // Mpesa will push payment statuses to this URL
-  'AccountReference': '', // Used with M-Pesa PayBills
+  'BusinessShortCode': '',
+  'TransactionType': 'CustomerPayBillOnline',
+  'Amount': '1',
+  'PartyA': '',
+  'PartyB': '',
+  'PhoneNumber': '',
+  'CallBackURL': '',
+  'AccountReference': '4002',
   'TransactionDesc': 'Testing mpesa online',
   'consumerKey': '',
   'consumerSecret': '',
-  'passKey': '', // Used to create a password for use when making a Lipa Na M-Pesa Online Payment API calls
-  'authenticationURL': 'https://sandbox.safaricom.co.ke/oauth/v1/generate?grant_type=client_credentials', // MPESA authentication end point
-  'processRequestURL': 'https://sandbox.safaricom.co.ke/mpesa/stkpush/v1/processrequest' // MPESA request processing end point
+  'passKey': '',
+  'authenticationURL': 'https://sandbox.safaricom.co.ke/oauth/v1/generate?grant_type=client_credentials',
+  'processRequestURL': 'https://sandbox.safaricom.co.ke/mpesa/stkpush/v1/processrequest'
 }
 
 // Use processRequest to receive the USSD payment prompt(STK push) on your mobile device
@@ -110,10 +110,14 @@ mpesa.mpesaRequest(processRequestParams, 'processRequest')
           'queryRequestURL': 'https://sandbox.safaricom.co.ke/mpesa/stkpushquery/v1/query'
         }
         return mpesa.mpesaRequest(queryRequestParams, 'queryRequest')
-          .then(response => response)
-          .catch(error => error)
+          .then(response => response) // Anything resolved will be handled here
+          .catch(error => error) // Anything rejected will be handled here
       }, 10000, 1000) // Let's query for the payment status every second for 10 seconds, to cater for any little delay in processing
         .then(response => console.log(response))
+        .catch(error => {
+          // An error occured, handle it
+          console.log(error)
+        })
     } else {
       // An error occured, handle it
       console.log(response)
