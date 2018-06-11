@@ -69,6 +69,89 @@ mpesa.mpesaRequest(params, 'queryRequest')
   .then(response => console.log(response))
   .catch(error => console.log(error))
 ```
+## An example
+#### A full example demonstrating how to make an mpesa request and query for the payment status.
+```javascript
+// Add the mpesa-online module
+const MpesaOnline = require('./lib/mpesa-online')
+const mpesa = new MpesaOnline()
+
+// The params required to make a processRequest
+const processRequestParams = {
+  'BusinessShortCode': '', // The organization shortcode used to receive the transaction
+  'TransactionType': 'CustomerPayBillOnline', // The transaction type to be used for this request
+  'Amount': '1', // Amount to be charged / paid
+  'PartyA': '', // The mobile number sending the funds
+  'PartyB': '', // The organization shortcode receiving the funds
+  'PhoneNumber': '', // The mobile number sending the funds
+  'CallBackURL': '', // Mpesa will push payment statuses to this URL
+  'AccountReference': '', // Used with M-Pesa PayBills
+  'TransactionDesc': 'Testing mpesa online',
+  'consumerKey': '',
+  'consumerSecret': '',
+  'passKey': '', // Used to create a password for use when making a Lipa Na M-Pesa Online Payment API calls
+  'authenticationURL': 'https://sandbox.safaricom.co.ke/oauth/v1/generate?grant_type=client_credentials', // MPESA authentication end point
+  'processRequestURL': 'https://sandbox.safaricom.co.ke/mpesa/stkpush/v1/processrequest' // MPESA request processing end point
+}
+
+// Use processRequest to receive the USSD payment prompt(STK push) on your mobile device
+mpesa.mpesaRequest(processRequestParams, 'processRequest')
+  .then(response => {
+    // If the response code is '0'(a success), query to check the status of the payment
+    if (response.ResponseCode === '0') {
+      poll(() => {
+        const queryRequestParams = {
+          'BusinessShortCode': '',
+          'CheckoutRequestID': response.CheckoutRequestID,
+          'consumerKey': '',
+          'consumerSecret': '',
+          'passKey': 'bfb279f9aa9bdbcf158e97dd71a467cd2e0c893059b10f78e6b72ada1ed2c919',
+          'authenticationURL': 'https://sandbox.safaricom.co.ke/oauth/v1/generate?grant_type=client_credentials',
+          'queryRequestURL': 'https://sandbox.safaricom.co.ke/mpesa/stkpushquery/v1/query'
+        }
+        return mpesa.mpesaRequest(queryRequestParams, 'queryRequest').then(response => response).catch(error => error)
+      }, 10000, 1000) // Let's query for the payment status every second for 10 seconds, to cater for any little delay in processing
+        .then(response => console.log(response))
+        .catch(error => console.log(error))
+    } else {
+      // An error occured, handle it
+      console.log(response)
+    }
+  })
+  .catch(error => {
+    // An error occured, handle it
+    console.log(error)
+  })
+
+const poll = (fn, timeout, interval) => {
+  const endTime = Number(new Date()) + (timeout)
+  const query = (resolve, reject) => {
+    fn()
+      .then(result => {
+        if (result.ResponseCode === '0') {
+          // Payment successful
+          resolve(result)
+        } else if (Number(new Date()) < endTime && (result.errorCode === '500.001.1001' &&
+          result.errorMessage === 'The transaction is being processed')) {
+          // Payment pending, continue querying
+          console.log('continue polling', result)
+          setTimeout(query, interval, resolve, reject)
+        } else if (Number(new Date()) > endTime) {
+          // Configured timeout period has lapsed, handle it
+          reject(result)
+        } else {
+          // An error occured, handle it
+          reject(result)
+        }
+      })
+      .catch(error => {
+        // An error occured, handle it
+        reject(error)
+      })
+  }
+  return new Promise(query)
+}
+```
 ## License
 #### MIT
 
