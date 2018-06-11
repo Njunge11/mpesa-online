@@ -70,7 +70,7 @@ mpesa.mpesaRequest(params, 'queryRequest')
   .catch(error => console.log(error))
 ```
 ## Connecting the dots...
-#### A snippet demonstrating how to make an mpesa payment request and query for the payments' status.
+#### A snippet demonstrating how to make an mpesa payment request and query for the payment status.
 ```javascript
 // Add the mpesa-online module
 const MpesaOnline = require('./lib/mpesa-online')
