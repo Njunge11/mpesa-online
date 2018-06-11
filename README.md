@@ -69,7 +69,7 @@ mpesa.mpesaRequest(params, 'queryRequest')
   .then(response => console.log(response))
   .catch(error => console.log(error))
 ```
-## An example
+## Connect the dots...
 #### A snippet demonstrating how to make an mpesa request and query for the payment status.
 ```javascript
 // Add the mpesa-online module
