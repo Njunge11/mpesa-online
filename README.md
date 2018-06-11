@@ -52,7 +52,7 @@ const params = {
 
 ## Check payment status(queryRequest)
 #### The queryRequest request type checks the status of the payment.
-#### The params
+
 ```javascript
 const params = {
   'BusinessShortCode': '',
@@ -69,8 +69,8 @@ mpesa.mpesaRequest(params, 'queryRequest')
   .then(response => console.log(response))
   .catch(error => console.log(error))
 ```
-## Connect the dots...
-#### A snippet demonstrating how to make an mpesa request and query for the payment status.
+## Connecting the dots...
+#### A snippet demonstrating how to make an mpesa payment request and query for the payments' status.
 ```javascript
 // Add the mpesa-online module
 const MpesaOnline = require('./lib/mpesa-online')
