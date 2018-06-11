@@ -114,7 +114,6 @@ mpesa.mpesaRequest(processRequestParams, 'processRequest')
           .catch(error => error)
       }, 10000, 1000) // Let's query for the payment status every second for 10 seconds, to cater for any little delay in processing
         .then(response => console.log(response))
-        .catch(error => console.log(error))
     } else {
       // An error occured, handle it
       console.log(response)
