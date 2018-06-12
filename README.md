@@ -1,6 +1,6 @@
 # mpesa-online
 
-[![Join the chat at https://gitter.im/{mpesa-online}/{Lobby}](https://img.shields.io/gitter/room/nwjs/nw.js.svg)](https://gitter.im/mpesa-online/Lobby?utm_source=share-link&utm_medium=link&utm_campaign=share-link)
+[![gitter](https://img.shields.io/gitter/room/nwjs/nw.js.svg)](https://gitter.im/mpesa-online/Lobby?utm_source=share-link&utm_medium=link&utm_campaign=share-link)
 
 A lightweight library for node.js that simplifies integrating your website/web app to mpesa using the Lipa na mpesa online payment API . The API documentation is quite adequate and contains sufficient code samples for several languages, you can check it out [here.](https://developer.safaricom.co.ke/docs#lipa-na-m-pesa-online-payment) If you don't have a developers' account , please [register](https://developer.safaricom.co.ke/login-register) and [create an app.](https://developer.safaricom.co.ke/docs#creating-a-sandbox-app) This step is very important in order to access test short codes and credentials required by the API.
 
