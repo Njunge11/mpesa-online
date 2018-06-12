@@ -1,6 +1,6 @@
 {
   "name": "mpesa-online",
-  "version": "1.0.10",
+  "version": "1.0.11",
   "description": "Rapidly integrate mpesa to your web app",
   "main": "index.js",
   "scripts": {
